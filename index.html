@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freeski Club Lenzerheide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon_FCL.png"
+</head>    
+<body>
+
+    <!-- Header / Hero Section -->
+    <header>
+        <div class="hero">
+            <img src="favicon_FCL.png" alt="Logo FCL" class="logo">
+            <h1>Freeski Club Lenzerheide</h1>
+            <p class="subtitle">Freeski in d' Heid</p>
+            <p class="tagline">Pure Leidsschaft, kein Business.</p>
+        </div>
+    </header> 
+
+    <!-- Über uns / Philosophie -->
+    <section id="about">
+        <h2>Wer mir sind</h2>
+        <p>Der <strong>Freeski Club Lenzerheide</strong> ist ein non-profit Projekt, das von Ridern für Rider ins Leben gerufen wurde. Unser Ziel ist es nicht, Geld zu verdienen, sondern die lokale Community zusammenbringen, gemeinsam im Park Spass zu haben und uns gegenseitig zu pushen.</p>
+        <ul>
+            <li><strong>Keine versteckten Kosten:</strong> Wir arbeiten rein kostendeckend.</li>
+            <li><strong>Für alle zugänglich:</strong> Egal welches Level - bei uns zählt der Vibe und die Progression, nicht das Portemonnaie.</li>
+            <li><strong>Echte Community:</strong> Gemeinsame Sessions und Coaching von Locals für Locals.</li>
+        </ul>
+    </section>
+
+    <!-- Mietgliedschaft -->
+    <section id="membership">
+        <h2>Mietgliedschaft</h2>
+        <p>Kein Profit, nur Sport. Jedes Jahr investieren wir jeden Franken direkt in den Club und die Basisspesen.</p>
+        <div class="price-box">
+            <div class="card">
+                <h3>Rider</h3>
+                <p class="price">10 CHF <span>/ Jahr</span></p>
+                <p>Für alle aktiven Rider, die Teil der Crew sein wollen.</p>
+            </div>
+            <div class="card">
+                <h3>Sponsor / Supporter</h3>
+                <p class="price">Freiwillig <span>/ Jahr</span></p>
+                <p>Für alle, die das Projekt und die lokale Szene unterstützen möchten.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programm -->
+    <section id="program">
+        <h2>Wann wir trainieren (Samstagnachmittag):</h2>
+        <hr>
+        <ul>
+            <li>JANUAR = 9. / 16. / 23. / 30.</li>
+            <li>FEBRUAR = 6. / 13. / 20. / 27.</li>
+            <li>MÄRZ = 6. / 13. / 20. / 27.</li>
+        </ul>
+        <h3>Konzentriertes Training:</h3>
+        <p>Wir nutzen Structure Hiking und machen Video Coaching, um Schritt für Schritt an der Technik zu feilen. Eltern beim Filmen sind extrem willkommen.</p>
+    </section>
+
+    <!-- Countdown -->
+    <div class="countdown-container">
+        <h3>Der Countdown läuft:</h3>
+        <div id="countdown" class="countdown-grid">
+            <div class="countdown-item"><span id="days">00</span><small>Tage</small></div>
+            <div class="countdown-item"><span id="hours">00</span><small>Stunden</small></div>
+            <div class="countdown-item"><span id="minutes">00</span><small>Minuten</small></div>
+            <div class="countdown-item"><span id="seconds">00</span><small>Sekunden</small></div>
+        </div>
+    </div>
+    
+    <!-- Anmeldung & Haftungsausschluss -->
+    <section id="anmeldung" class="anmeldung">
+        <a href="anmeldung_haftungsausschluss_FCL.pdf" target="_blank" class="btn anmeldung">Anmeldung & Haftungsausschluss</a>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact">
+        <h2>Sei dabei</h2>
+        <p>Hast du Fragen? Schreib uns direkt auf Instagram, Facebook oder per Mail.</p>
+        <a href="https://instagram.com/freeskiclublenzerheide" target="_blank" class="btn">Instagram DM</a>
+        <a href="https://facebook.com/freeskiclublenzerheide" target="_blank" class="btn">Facebook DM</a>
+        <a href="mailto:kevinrovati@gmail.com" target="_blank" class="btn">E-mail senden</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Freeski Club Lenzerheide. Built by riders, for riders.</p>
+    </footer>
+
+</body>
+<script>
+    //Imposta data del primo allenamento (9 Gennaio 2027 alle ore 14:00)
+    const countDownDate = new Date("Jan 9, 2027 14:00:00").getTime();
+
+    const x = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+        document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "<h3>Die Session hat begonnen!</h3>";
+        }
+    }, 1000);
+</script>
+
+
+
+</html>
+
+
