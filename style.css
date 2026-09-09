@@ -6,6 +6,9 @@ body {
     padding: 0;
     line-height: 1.6;
     background: linear-gradient(135deg, #111113 0%, #0a0a0c 100%), url('background.jpg');
+    background-size: cover;
+    backgorund-position: center;
+    background-attachment: fixed;
 
 }
 
